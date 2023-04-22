@@ -27,24 +27,24 @@ Other data to add: employment rates, inflation rates, GDP growth (from the feds?
     - price data by zip code over time
     - recession data
     - interest rate data (fed funds rate)
-    analyze:
-    - interest rates vs prices over time
-    - interest rates vs price changes over time (need yearly price change data)
+    - analyze:
+      - interest rates vs prices over time
+      - interest rates vs price changes over time (need yearly price change data)
 
 2. get: same as 1
-    analyze:
-    - find outlier zip codes (higly and poorly impacted), discuss
-    - plot data on a map
+    - analyze:
+      - find outlier zip codes (higly and poorly impacted), discuss
+      - plot data on a map
 
 3. get:
     - recession data
-    analyze:
-    - changes during recession vs not during recession
-    - outliers by zip code (resilient zip codes vs sensitive ones)
+    - analyze:
+      - changes during recession vs not during recession
+      - outliers by zip code (resilient zip codes vs sensitive ones)
 
 4. get: data from above
-    analyze:
-    - linear regression model for future house prices overall, by zip
-    - predict house price by zip 5ys out under 1-3 fed rate scenarios
-    - create time series ML model with scikit-learn?
-    - add forecast values to map
+    - analyze:
+      - linear regression model for future house prices overall, by zip
+      - predict house price by zip 5ys out under 1-3 fed rate scenarios
+      - create time series ML model with scikit-learn?
+      - add forecast values to map
