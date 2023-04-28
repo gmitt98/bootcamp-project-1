@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+data/cleaned data/redfin_quarterly_prices_by_zip.csv
+data/zip_code_market_tracker.tsv000
