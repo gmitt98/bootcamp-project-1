@@ -1,12 +1,9 @@
-import sys
-print(sys.executable)
-
-
 import requests
 import pandas as pd
 from typing import List
+from config import geoapify_key
 
-def get_schools_in_zip(zipcode: str, geoapify_key: str) -> pd.DataFrame:
+def get_schools_in_zip(zipcode: str) -> pd.DataFrame:
     
     # Set parameters for geocode search
     params = {
@@ -49,28 +46,35 @@ def get_schools_in_zip(zipcode: str, geoapify_key: str) -> pd.DataFrame:
     # Extract list of features from places response
     features_list = places_response['features']
 
-    # Extract the relevant properties from each feature and append to a list
-    rows = []
-    for feature in features_list:
-        properties = feature['properties']
-        rows.append(properties)
+    if (places_response["features"])==[""]:
+        return pd.DataFrame()
 
-    # Create a DataFrame from the list of dictionaries
-    df = pd.DataFrame(rows)
+    else:
+        # Extract the relevant properties from each feature and append to a list
+        rows = []
+        for feature in features_list:
+            properties = feature['properties']
+            rows.append(properties)
 
-    # Drop rows with missing data
-    df = df.dropna(subset=['name', 'postcode'])
+        # Create a DataFrame from the list of dictionaries
+        df = pd.DataFrame(rows)
+        
+        # Drop rows with missing data
+        df = df.dropna(subset=['name', 'postcode'],how=any)
+        
+        if df.empty:
+            return pd.DataFrame
 
-    # Drop unnecessary columns
-    df = df.drop(columns=['country','country_code','state','street','lon','lat','state_code','formatted',
+        # Drop unnecessary columns
+        df = df.drop(columns=['country','country_code','street','lon','lat','state_code','formatted',
                           'address_line1','address_line2','categories','details','datasource','place_id',
-                          'housenumber','district','suburb','quarter','old_name','city'])
+                          'housenumber','district','suburb','quarter','old_name','county'])
 
-    # Rename the 'postcode' column to 'zipcode'
-    df = df.rename(columns={'postcode': 'zipcode'})
+        # Rename the 'postcode' column to 'zipcode'
+        df = df.rename(columns={'postcode': 'zipcode'})
 
-    # Filter the DataFrame to only include schools within the target zip code
-    zip_df = df.loc[df['zipcode'] == zipcode]
+        area_df = df
+        zip_df = area_df.loc[area_df['zipcode'] == zipcode]
 
-    # Return the filtered DataFrame
-    return zip_df
+        # Return the filtered DataFrame
+        return (area_df, zip_df)
