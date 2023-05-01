@@ -127,5 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# custom files and configs
 data/cleaned data/redfin_quarterly_prices_by_zip.csv
 data/zip_code_market_tracker.tsv000
+api zipcodes/config.py
