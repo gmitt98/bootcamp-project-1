@@ -9,10 +9,10 @@ Investigating the impact of interest rates, recession, and proximity to services
 
 # Workflow:
 Four analysts shared the work.  The four areas of work, roughly in order the work was done, were:
-1 - Data collection using APIs and data cleaning (this analyst also did analysis on recessions and modeling)
-2 - Determining national growth and decline outliers by Zip Code over various time periods, with some interpretation of the resulting maps
-3 - Data collection of Zip Code coordinates (for mapping), and counting of proximal schools and parks, using Geoapify
-4 - Data visualizations including all plots and maps
+1. - Data collection using APIs and data cleaning (this analyst also did analysis on recessions and modeling)
+2. - Determining national growth and decline outliers by Zip Code over various time periods, with some interpretation of the resulting maps
+3. - Data collection of Zip Code coordinates (for mapping), and counting of proximal schools and parks, using Geoapify
+4. - Data visualizations including all plots and maps
 
 Collaborative work was managed on GitHub.  Analysts 1-3 largely worked with individual Notebooks, passing data and results to one another through .csv files stored in the repo.  Analyst 4 added plotting and mapping into the analysis Notebooks and saved images for presentation.
 
