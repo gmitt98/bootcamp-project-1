@@ -1,5 +1,5 @@
 # Objective:
-Investigating the impact of interest rates on the housing market: use the Federal Reserve's interest rate data and home price data from sources like Zillow, Redfin, and the Fed's Case-Shiller home price index to study how changes in interest rates affect the housing market.
+Investigating the impact of interest rates, recession, and proximity to services (such as schools and parks) on the housing market, broken down roughly by Zip Code: use the Federal Reserve's interest rate data and home price data from sources like Zillow, Redfin, and the Fed's Case-Shiller home price index to study how changes in interest rates affect the housing market.
 
 # Approach:
 Cut it by ZIP code and see what the impact is in different parts of the country.
