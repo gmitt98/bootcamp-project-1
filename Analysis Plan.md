@@ -1,3 +1,4 @@
+### INITIAL PLAN: this is our project analysis at the start of the project. Final report may differ.
 # Objective:
 Investigating the impact of interest rates on the housing market: use the Federal Reserve's interest rate data and home price data from sources like Zillow, Redfin, and the Fed's Case-Shiller home price index to study how changes in interest rates affect the housing market.
 
