@@ -27,6 +27,18 @@ The content in this folder is as follows:
 * Visuals folder: contains the charts and graphs and maps that we generated in our analyses
 * jupyter notebook files: these live in the top level of this repo, and they are the notebook used for the various analysis. Note: we kept to 1 notebook per use case: data cleaning, data merging, research question analysis... we contain these for ease of collaboration and version control.
 
+Notebook annual_outliers_py.ipynb in the tip directory opens cleaned hpi data from /data/cleaned data/cleaned_hpi_price_data.csv and determines outliers for each year based on the difference from the prior year, for all 13,000 unique zip codes for 48 years from 1975 to 2022.  It saves the output to .csv files in data/analysis.
+
+Notebook period_outliers_difference_py.ipynb in the top directory opens cleaned hpi data from /data/cleaned data/cleaned_hpi_price_data.csv and determines outliers based on the difference from the earlier year for each period of 3, 5, 10, 20, and 48 years, for all 13,000 unique zip codes for 48 years from 1975 to 2022.  It saves the results to .csv files in /data/analysis.
+
+Notebook period_outliers_ratio_py.ipynb in the top directory opens cleaned hpi data from /data/cleaned data/cleaned_hpi_price_data.csv and determines outliers based on the percent change from the earlier year for each period of 3, 5, 10, 20, and 48 years, for all 13,000 unique zip codes for 48 years from 1975 to 2022.  It saves the results to .csv files in /data/analysis.
+
+Notebook zip_coordinates.ipynb in the /api_zipcodes directory takes a list of zip_codes from a .csv file whose path is typed directly into the code, and adds columns for latitude and longitude to the dataframe and resaves it as a new .csv file in /data/analysis.
+
+Python file outliers_utility.py in the /api_zipcodes directory is a script that defines a function to open the two annual_outliers .csv files in /data/analysis and merge the results into a single dataframe for a single year, to make further analysis more convenient.  This could be called in a loop.
+
+Python script zip_coordinates_function.py in the /api_zipcodes directory is a script that defines a function to enter a single zip code and return its latitude and longitude as variables.  This was used in a loop in zip_coordinates.ipynb notebook in the same directory to loop through lists of zip codes and return their coordinates for mapping.
+
 ## Files not on Git
  * Large datafiles: original Redfin data, saved raw cleaned data
  * API keys
