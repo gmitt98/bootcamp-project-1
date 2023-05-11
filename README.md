@@ -45,9 +45,17 @@ Notebook *period_outliers_ratio_py.ipynb* in the top directory opens cleaned hpi
 
 Notebook *zip_coordinates.ipynb* in the /api_zipcodes directory takes a list of zip_codes from a .csv file whose path is typed directly into the code, and adds columns for latitude and longitude to the dataframe and resaves it as a new .csv file in /data/analysis.
 
+Notebook *singlezip_final.ipynb* in the /api_zipcodes directory calls the Geoapify API to find and create a dataframe of all the schools in a single zipcode. This data is visualized with a provided analysis for three individual zipcodes. You must have a valid API key in config.py.
+
+Notebook *singlezip_parks.ipynb* in the /api_zipcodes directory calls the Geoapify API to find and create a dataframe of all the parks in a single zipcode. The the data is visualized with a map for a single zipcode. You must have a valid API key in config.py.
+
+Notebook *schoolsbyzip.ipynb* in the /api_zipcodes directory loops through a list of zipcodes provided by means of outliers_utility.py using the function in single_zip_function and returns the number of schools within a each area and relevant zipcode. It outputs values to results.csv in the same folder. You must have a valid API key in config.py.
+
 Python *file outliers_utility.py* in the /api_zipcodes directory is a script that defines a function to open the two annual_outliers .csv files in /data/analysis and merge the results into a single dataframe for a single year, to make further analysis more convenient.  This could be called in a loop.
 
 Python *script zip_coordinates_function.py* in the /api_zipcodes directory is a script that defines a function to enter a single zip code and return its latitude and longitude as variables.  This was used in a loop in zip_coordinates.ipynb notebook in the same directory to loop through lists of zip codes and return their coordinates for mapping.
+
+Python *single_zip_function.py* in the /api_zipcodes directory is a script that defines a function to enter a single zipcode and return a dataframe of all the schools in the area using the Geoapify API. You must have a valid API key in config.py.
 
 ## Files not on Git
  * Large datafiles: original Redfin data, saved raw cleaned data
